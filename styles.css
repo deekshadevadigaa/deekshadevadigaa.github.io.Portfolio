@@ -1,3 +1,9 @@
+@media (max-width: 768px) {
+    /* Your mobile styles here */
+    body {
+        font-size: 16px; /* Adjust font size for mobile */
+    }
+}
 
 body {
 
@@ -420,6 +426,10 @@ summary:hover {
 .smalee{
     height: 35px;
     width: 35px;
+}
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 
