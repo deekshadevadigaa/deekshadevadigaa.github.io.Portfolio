@@ -61,3 +61,18 @@ const currentYear = new Date().getFullYear();
 // Update the copyright year in the HTML
 const copyrightElement = document.getElementById('copyright');
 copyrightElement.textContent = `&copy; ${currentYear} Deeksha Devadiga. All rights reserved.`;
+
+
+
+
+  
+  
+// JavaScript to toggle the mobile menu
+document.querySelector(".mobile-menu").addEventListener("click", function () {
+    this.classList.toggle("active");
+});
+if (window.innerWidth < 768) {
+    // Code for phones
+} else {
+    // Code for desktops
+}

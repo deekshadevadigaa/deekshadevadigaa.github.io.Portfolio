@@ -1,15 +1,18 @@
-@media (max-width: 768px) {
-    /* Your mobile styles here */
-    body {
-        font-size: 16px; /* Adjust font size for mobile */
-    }
-}
+@media(min-width:960px)
+{html
+    {font-size:100%;}
+}  
+@media(max-width:600px)
+{html
+    {font-size:16px;}
+}  
 
 body {
 
     font-family: Arial, sans-serif;
-    
+    font-size:16px;
     margin: 0;
+    line-height: 30px;
     padding: 0;
     background-color: rgba(169, 176, 193, 0.367);;
     font-family: 'Proxima Nova', sans-serif;
@@ -18,15 +21,56 @@ body {
 
 p {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
-    font-weight: 500;
-    line-height: 3.0; /* or 'bold' as a fallback */
+    font-size: 16px;
+    line-height: 40px; 
 }
-/* Add a background to unordered lists in the "About" section */
+h1,h3,h4,h5,h6,summary{
+    font-size: 15px;
+    text-shadow: 2px 2px 4px #00000071;
+}
+h2{
+    font-size:17px ;
+    text-shadow: 2px 2px 4px #00000071;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+/*hiding hamburger*/
+.mobile-menu {
+    display: none;
+    cursor: pointer;
+}
+
+/*hamburger*/
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+@media screen and (max-width: 600px) {
+    .mobile-menu {
+        display: block;
+    }
+    nav ul {
+        display: none;
+    }
+    .mobile-menu.active .bar:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    .mobile-menu.active .bar:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+    .mobile-menu.active + nav ul {
+        display: block;
+    }
+}
 
 
 
-
-/* Header styles */
 header {
     background-color: rgb(0, 0, 66);
     color:#000000 ;
@@ -103,7 +147,6 @@ nav ul li a:hover {
     justify-content: space-between;
     align-items: center;
    padding: 20px;
-    line-height: 2.5;
     margin-top: 100px;
     cursor: pointer; 
     
@@ -119,28 +162,20 @@ nav ul li a:hover {
     margin-left: 80px;
     cursor: pointer; 
 }
-.image-animation {
-    flex: 1;
-    text-align: right;
-    border-radius: 50%;
-    cursor: pointer; 
-}
+
 
 .large-image {
-    width: 400px;
+    max-height: 400px;
+    max-width: 400px;
      margin-right: 10px;
      float: right;
      box-shadow: 0 0 30px rgba(0, 0, 0, 0.995);
      border-radius: 50%;
      cursor: pointer; 
+     margin-right: 100px;
      
 }
-.image-animation {
-    width: 100%;
-   
-    margin-right: 10px;
-    cursor: pointer; 
-}
+
 
 @font-face {
     font-family: 'Proxima Nova';
@@ -150,14 +185,10 @@ nav ul li a:hover {
     font-style: normal;
     cursor: pointer; 
 }
-.image-animation{
-    margin-right: 150px;
-    cursor: pointer; 
-}
 
 .image-ani {
     max-width: 400px;
-    height:500px;
+    max-height: 400px;;
     margin-top: -200px;
     object-fit: cover;
     border-radius: 50%;
@@ -168,34 +199,37 @@ nav ul li a:hover {
     cursor: pointer; 
     
 }
-
-
-.about-content {
-    flex: 1;
-    padding: 20px;
-    overflow: hidden; 
-    cursor: pointer; 
-}
-
-
-
 #about {
     display: flex;
     justify-content: space-between;
     align-items: center;
+   padding: 20px;
+    margin-top: 100px;
+    cursor: pointer; 
+    
+}
+
+.about-content {
+    flex: 1;
     padding: 20px;
-    line-height: 2.5;
+    cursor: pointer; 
+
+}
+.about-content p{
+    margin-left: 80px;
     cursor: pointer; 
 }
 section:not(:last-child) {
     margin-bottom: 10px; 
     cursor: pointer; 
 }
+
+
 /* Add a transition to the "View my resume" link */
 a[href="https://drive.google.com/drive/folders/1BWNB9rxGrS-9jcjOFJLEOqL2ihoUIlvW"] {
     transition: color 0.3s ease;
     background-color: #f7f7f7; /* Set the background color you want */
-    padding: 20px 20px; /* Add padding to create space around the link */
+    padding: 5px 5px; /* Add padding to create space around the link */
     border-radius: 5px; /* Add rounded corners */
     color: #fff; /* This transition affects the color property over 0.3 seconds with ease-in-out timing */
     text-decoration: none;
@@ -211,26 +245,26 @@ a[href="https://drive.google.com/drive/folders/1BWNB9rxGrS-9jcjOFJLEOqL2ihoUIlvW
     cursor: pointer; /* Set the color you want when hovering over the link */
 }
 
-#about h3{
-    text-shadow: 2px 2px 4px #00000071;
-}  
+
+
+
 .passion-list {
     margin-left: 120px;
 }
 
-/* Add a transition effect to the summary */
+
 summary {
-    
-    transition: transform 0.2s ease, cursor 0.2s ease;
     cursor: pointer; 
+    
 }
 
 /* Apply the hover effect */
 summary:hover {
     cursor: pointer;
-    transform: scale(1.1) translateX(0);
-    cursor: pointer;  /* Adjust the scale factor and translateX value as needed */
+   
+    
 }
+
 .background-paragraph {
    background-image: url('makeupee.webp');
     background-size: 25%; /* Adjust to your preference */
@@ -279,16 +313,8 @@ summary:hover {
     margin-left: 150px;
     cursor: pointer; 
 }
-#projects {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    line-height: 2.5;
-    cursor: pointer; 
 
-    
-}
+
 .horizontal-list {
     list-style: none; /* Remove default list bullets */
     padding: 0;
@@ -301,18 +327,26 @@ summary:hover {
     cursor: pointer; 
     /* Add spacing between list items */
 }
-
+#projects {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   padding: 20px;
+    margin-top: 100px;
+    cursor: pointer; 
+    
+}
 .projects-content{
     flex: 1;
     padding: 20px;
     cursor: pointer; 
 }
 
-.projects-content h3{
-    text-decoration: underline;
-    cursor: pointer; 
+.projects-content p{
+        margin-left: 80px;
+        cursor: pointer; 
+    }
     
-}
 .small-image {
     width: 250px; 
     height:140px;
@@ -365,16 +399,17 @@ summary:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
-    line-height: 2.5;
+   padding: 20px;
+    margin-top: 100px;
     cursor: pointer; 
+    
 }
-.contact-content{
+.projects-content{
     flex: 1;
     padding: 20px;
-    overflow: hidden;
     cursor: pointer; 
 }
+
 .contact-content h3{
     cursor: pointer;
     color: #e0e0e0;
@@ -391,10 +426,7 @@ summary:hover {
     
     
 }
-.contact-content h3 :hover{
-    transition: cubic-bezier(0.075, 0.82, 0.165, 1) ;
-    cursor: pointer;
-}
+
 .horiz-list{
     list-style: none; /* Remove default list bullets */
   
@@ -427,9 +459,6 @@ summary:hover {
     height: 35px;
     width: 35px;
 }
-img {
-    max-width: 100%;
-    height: auto;
-}
+
 
 
